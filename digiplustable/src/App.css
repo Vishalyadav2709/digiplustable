@@ -1,0 +1,75 @@
+/* App.css or custom CSS file */
+
+/* Container styles */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Table styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+/* Table header styles */
+table th {
+  background-color: #008CBA;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* Table row styles */
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* "Actions" column styles */
+table td button {
+  background-color: #FF5733;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+table td button:hover {
+  background-color: #D14005;
+}
+
+/* Input fields and "Add Row" button styles */
+input[type="text"] {
+  padding: 10px;
+  width: 100px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button#add-row-button {
+  background-color: #27AE60;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button#add-row-button:hover {
+  background-color: #1A8C47;
+}
