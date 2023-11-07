@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 const DynamicTable = () => {
   const [data, setData] = useState([]);
   const [newRow, setNewRow] = useState({ name: '', age: '', cgpa: '' });
-  const [selectedRow, setSelectedRow] = useState(null); // To store the index of the row being edited
+  const [selectedRow, setSelectedRow] = useState(null); 
+  const [sortOrder, setSortOrder] = useState('asc');
 
-  // Add a new state variable to keep track of SR numbers
+  
   const [srNumber, setSrNumber] = useState(1);
 
   const handleAddRow = () => {
@@ -45,6 +46,20 @@ const DynamicTable = () => {
     newData.splice(index, 1);
     setData(newData);
   };
+  const handleSort = () => {
+    const sortedData = [...data];
+    sortedData.sort((a, b) => {
+      if (sortOrder === 'asc') {
+        return a.name.localeCompare(b.name);
+      } else {
+        return b.name.localeCompare(a.name);
+      }
+    });
+
+    setData(sortedData);
+    setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+  };
+
 
   return (
     <div>
@@ -52,8 +67,14 @@ const DynamicTable = () => {
         <thead>
           <tr>
             <th>SR</th>
-            <th>Name</th>
-            <th>Age</th>
+            <th>Name
+            <button onClick={handleSort}>
+                {sortOrder === 'asc' ? '▲' : '▼'}
+              </button>
+            </th>
+            <th>Age
+          
+            </th>
             <th>cgpa</th>
             <th>Actions</th>
           </tr>
